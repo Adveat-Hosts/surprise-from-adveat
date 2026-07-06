@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WishRouteImport } from './routes/wish'
+import { Route as GoldenRouteImport } from './routes/golden'
+import { Route as BoldRouteImport } from './routes/bold'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WishRoute = WishRouteImport.update({
+  id: '/wish',
+  path: '/wish',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GoldenRoute = GoldenRouteImport.update({
+  id: '/golden',
+  path: '/golden',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoldRoute = BoldRouteImport.update({
+  id: '/bold',
+  path: '/bold',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,61 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bold': typeof BoldRoute
+  '/golden': typeof GoldenRoute
+  '/wish': typeof WishRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bold': typeof BoldRoute
+  '/golden': typeof GoldenRoute
+  '/wish': typeof WishRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bold': typeof BoldRoute
+  '/golden': typeof GoldenRoute
+  '/wish': typeof WishRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/bold' | '/golden' | '/wish'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/bold' | '/golden' | '/wish'
+  id: '__root__' | '/' | '/bold' | '/golden' | '/wish'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BoldRoute: typeof BoldRoute
+  GoldenRoute: typeof GoldenRoute
+  WishRoute: typeof WishRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/wish': {
+      id: '/wish'
+      path: '/wish'
+      fullPath: '/wish'
+      preLoaderRoute: typeof WishRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/golden': {
+      id: '/golden'
+      path: '/golden'
+      fullPath: '/golden'
+      preLoaderRoute: typeof GoldenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bold': {
+      id: '/bold'
+      path: '/bold'
+      fullPath: '/bold'
+      preLoaderRoute: typeof BoldRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +104,20 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BoldRoute: BoldRoute,
+  GoldenRoute: GoldenRoute,
+  WishRoute: WishRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
