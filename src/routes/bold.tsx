@@ -114,7 +114,7 @@ function BoldPage() {
             No loud outfit, no forced pose, just her....shoulders relaxed, sitting like she owns the room. (That's just who she is when nobody's asking her to perform)
             {"\n\n"}
             Some people are loud and some people are lightning. You're the second kind....the sky waits for you. Never dim it down for a room that isn't ready &gt;&gt;&gt;
-            {"\n\n\n\n"}
+            {"\n\n"}
           </motion.p>
 
           {/* compliment cards */}
