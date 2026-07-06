@@ -1,9 +1,9 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import { Music2, VolumeX } from "lucide-react";
 
-// Soft ambient piano — royalty-free. User can replace with /music.mp3 in public/.
+// Warm ambient piano (Kevin MacLeod — "Wallpaper", CC-BY 4.0) shipped in /public.
 const DEFAULT_TRACK = "/music.mp3";
-const FALLBACK_TRACK = "https://cdn.pixabay.com/download/audio/2022/03/15/audio_1a2b0dbf12.mp3?filename=relaxing-mountains-rivers-flowing-birds-singing-303069.mp3";
+const FALLBACK_TRACK = "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Wallpaper.mp3";
 
 type MusicCtx = { playing: boolean; start: () => void; toggle: () => void };
 const Ctx = createContext<MusicCtx | null>(null);
