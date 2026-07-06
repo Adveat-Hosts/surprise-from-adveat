@@ -108,16 +108,17 @@ function WishPage() {
             transition={{ delay: 2.8, duration: 1.5 }}
             className="mt-8 max-w-lg font-serif-elegant text-lg italic leading-relaxed text-foreground/90"
           >
-            You walk into every room like the forest opens for you — leaves catching
-            the light, warmth spilling from your smile. Today the whole world takes a
-            moment to celebrate the girl who makes ordinary days feel golden.
+            You walk into every room like the forest opens for you......leaves
+            catching the light, warmth spilling from your smile. Today the whole
+            world takes a moment to celebrate the girl who makes ordinary days
+            feel golden {">>>"}
             <br />
             <br />
             <br />
-            Some people need the perfect light to look like this. She just steps into
-            it and the light figures out how to keep up — that long, wavy dark hair
-            catching every bit of sun, those big warm eyes doing that thing where
-            they look gentle even when she's clearly the main character of
+            Some people need the perfect light to look like this. She just steps
+            into it and the light figures out how to keep up that long, wavy dark
+            hair catching every bit of sun, those big warm eyes doing that thing
+            where they look gentle even when she's clearly the main character of
             whatever's happening around her.
           </motion.p>
 
