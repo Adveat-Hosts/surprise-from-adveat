@@ -114,7 +114,6 @@ function WishPage() {
             feel golden {">>>"}
             <br />
             <br />
-            <br />
             Some people need the perfect light to look like this. She just steps
             into it and the light figures out how to keep up that long, wavy dark
             hair catching every bit of sun, those big warm eyes doing that thing
