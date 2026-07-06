@@ -9,14 +9,14 @@ export const Route = createFileRoute("/bold")({
 
 const compliments = [
   "🩶 Long, naturally wavy black hair with a center part.",
-  "🩶 Large almond-shaped brown eyes — gentle, not sharp.",
+  "🩶 Large almond-shaped brown eyes, gentle, not sharp.",
   "🩶 A small nose with a soft, kind bridge.",
   "🩶 Rounded cheeks and a narrow jaw, softer than any trend.",
   "🩶 Thin, natural eyebrows that ask nothing of the mirror.",
   "🩶 A subtle smile that lifts one side, and the whole room with it.",
   "🩶 A slender build and easy, unbothered posture.",
   "🩶 Minimal makeup. Real skin. Real courage.",
-  "🩶 A quiet kind of bold — the kind that lasts.",
+  "🩶 A quiet kind of bold, the kind that lasts.",
   "🩶 You don't shout to be seen; the room learns to listen.",
 ];
 
@@ -109,10 +109,12 @@ function BoldPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2.5 }}
-            className="mt-8 max-w-lg font-serif-elegant text-lg italic leading-relaxed text-foreground/85"
+            className="mt-8 max-w-lg font-serif-elegant text-lg leading-relaxed text-foreground/85 whitespace-pre-line"
           >
-            Some people are loud and some people are lightning. You're the second kind —
-            the sky waits for you. Never dim it down for a room that isn't ready.
+            No loud outfit, no forced pose, just her....shoulders relaxed, sitting like she owns the room. (That's just who she is when nobody's asking her to perform)
+            {"\n\n"}
+            Some people are loud and some people are lightning. You're the second kind....the sky waits for you. Never dim it down for a room that isn't ready &gt;&gt;&gt;
+            {"\n\n\n\n"}
           </motion.p>
 
           {/* compliment cards */}
@@ -140,10 +142,14 @@ function BoldPage() {
             className="mt-14 rounded-3xl border border-primary/30 bg-gradient-gold p-8 text-[oklch(0.15_0.02_60)] shadow-glow"
           >
             <p className="font-display text-2xl leading-snug sm:text-3xl">
-              Happy Birthday, di.<br />
+              Happy Birthday Dhruviiiii.<br />
               <span className="italic">Stay soft. Stay bold. Stay exactly like this.</span>
             </p>
-            <p className="mt-4 font-serif-elegant italic opacity-80">— with all my love, always.</p>
+            <p className="mt-4 font-serif-elegant italic opacity-80 whitespace-pre-line">
+              — with all my love, always.
+              {"\n"}
+              &nbsp; &nbsp; &nbsp;Adveat Sankhe
+            </p>
           </motion.div>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
